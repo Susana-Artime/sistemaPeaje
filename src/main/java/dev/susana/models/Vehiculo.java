@@ -12,7 +12,7 @@ abstract class Vehiculo {
             return placa;
         }
     
-        public abstract int calcularPeaje();
+        public abstract float calcularPeaje();
     }
     
 

@@ -7,7 +7,7 @@ public class Moto extends Vehiculo {
     }
 
     @Override
-    public int calcularPeaje() {
+    public float calcularPeaje() {
         return 50;
     }
     
