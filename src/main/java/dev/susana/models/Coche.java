@@ -8,7 +8,7 @@ public class Coche extends Vehiculo{
 
     @Override
     public float calcularPeaje() {
-        return 100;
+        return 100.0f;
     }
     
 }

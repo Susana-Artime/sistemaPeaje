@@ -15,7 +15,7 @@ public class Camion extends Vehiculo {
 
     @Override
     public float calcularPeaje() {
-        return numeroEjes * 50;
+        return numeroEjes * 50.0f;
     }
     
 }

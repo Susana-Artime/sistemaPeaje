@@ -7,7 +7,7 @@ public class EstacionPeaje {
 
     private String nombre;
     private String ciudad;
-    private int totalRecaudado;
+    private float totalRecaudado;
     private List<Vehiculo> vehiculos;
 
     public EstacionPeaje(String nombre, String ciudad) {
@@ -17,22 +17,47 @@ public class EstacionPeaje {
         this.vehiculos = new ArrayList<>();
     }
 
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+
+
+    public float getTotalRecaudado() {
+        return totalRecaudado;
+    }
+
+
+
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+
+
     public void procesarVehiculo(Vehiculo vehiculo) {
-        int peaje = vehiculo.calcularPeaje();
+        float peaje = (int) vehiculo.calcularPeaje();
         totalRecaudado += peaje;
         vehiculos.add(vehiculo);
-        System.out.println("Vehículo procesado: " + vehiculo.getPlaca() + " | Peaje cobrado: " + peaje + " euros");
+        System.out.println("Vehículo procesado: " + vehiculo.getPlaca() + " | Peaje cobrado: " + String.format("%.2f", peaje) + " euros");
     }
 
     public void imprimirResumen() {
-        System.out.println("\n--- Resumen de la Estación de Peaje ---");
+        System.out.println("--- Resumen de la Estación de Peaje ---");
         System.out.println("Estación: " + nombre + " | Ciudad: " + ciudad);
-        System.out.println("Total recaudado: " + totalRecaudado + " euros");
+        System.out.println("Total recaudado: " + String.format("%.2f", totalRecaudado) + " euros");
         System.out.println("Vehículos procesados:");
         for (Vehiculo vehiculo : vehiculos) {
-            System.out.println("- " + vehiculo.getPlaca() + " | Peaje: " + vehiculo.calcularPeaje() + " euros");
+            System.out.println("- " + vehiculo.getPlaca() + " | Peaje: " + String.format("%.2f", vehiculo.calcularPeaje()) + " euros");
         }
-    }
-}
+    }}
     
 
